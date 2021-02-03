@@ -8,17 +8,30 @@
 </head>
 
 <body>
+  <div>
+    <button ondblclick="touch()">只可以双击的按钮</button>
+    <button id="touch">可以双击和单机的按钮</button>
+  </div>
+
   <script>
     function touch() {
       // let Onclick_number = 1;
       console.log('双击了我');
     }
-
+    let time = null;
   </script>
 
-  <div>
-    <button ondblclick="touch()">点击我</button>
-  </div>
+  <script>
+    document.getElementById("touch").addEventListener('click', onDocumentClick);
+    document.getElementById("touch").addEventListener('dblclick', onDocumenDblClick);
+
+    function onDocumentClick(event) {
+      console.log("鼠标单击");
+    }
+    function onDocumenDblClick(event) {
+      console.log("鼠标双击");
+    }
+  </script>
 </body>
 
 </html>
